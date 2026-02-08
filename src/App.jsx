@@ -276,7 +276,7 @@ return (
       </div>
       <div className='border-t-1 w-full py-3 px-3 border-[#0005] flex justify-between px-4'>
         <button type='button' className='border-1 px-5 py-1.5 rounded-[8px] cursor-pointer transition-colors duration-300  hover:bg-gray-300' onClick={editModalClose}>Cancel</button>
-        <button type='submit' className='border-1 px-5 py-1.5 rounded-[8px] cursor-pointer transition-colors duration-300 bg-blue-500 border-blue-500 text-white hover:bg-blue-400'>Add</button>
+        <button type='submit' className='border-1 px-5 py-1.5 rounded-[8px] cursor-pointer transition-colors duration-300 bg-blue-500 border-blue-500 text-white hover:bg-blue-400'>Edit</button>
       </div>
       </form>
     </div>

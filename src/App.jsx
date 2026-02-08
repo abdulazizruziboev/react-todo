@@ -220,7 +220,7 @@ return (
       <div className="max-w-[1440px] w-full flex justify-between items-center">
         <a href="/" className="text-[]">ToDo App</a>
         <button className="px-3 py-1.5 rounded-[8px] cursor-pointer bg-blue-500 text-white hover:bg-blue-700 duration-300 transition-colors" onClick={addModalOpen}>
-         <span className="fa fa-plus pointer-events-none"></span> Add ToDo
+         <span className="fa fa-plus pointer-events-none"></span> Add ToDo`s
         </button>
       </div>
     </header>

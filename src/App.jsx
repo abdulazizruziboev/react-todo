@@ -117,8 +117,8 @@ function TodoList() {
             <span className="text-[12px] opacity-50">#{el.status?el.status:"no_status"}</span>
           </div>
           <div className="flex flex-col justify-end gap-3 text-end">
-            <button className="text-amber-500 cursor-pointer leading-none text-end leading-none hover:opacity-80 transition-opacity duration-300" onClick={()=>editToDo(el.id)}>Edit</button>
-            <button className="text-red-500 cursor-pointer leading-none hover:opacity-80 transition-opacity duration-300" onClick={()=>deleteToDo(el.id)}>Delete</button>
+            <button className="text-amber-500 cursor-pointer leading-none text-end leading-none hover:opacity-80 hover:underline transition-all duration-300" onClick={()=>editToDo(el.id)}>Edit</button>
+            <button className="text-red-500 cursor-pointer leading-none text-end leading-none hover:opacity-80 hover:underline transition-all duration-300" onClick={()=>deleteToDo(el.id)}>Delete</button>
           </div>
         </div>
       )
@@ -187,24 +187,23 @@ function toastRemover() {
 }
 
 function toasWriter () {
-  
 return toastList.map(el=>{
         let bg = "";
         switch (el.type) {
           case "info":
-            bg="#00bafe";
+            bg="#0284C780";
             break;
           case "success":
-            bg="#00d390";
+            bg="#15803D80";
             break;
           case "error":
-            bg="#ff637d";
+            bg="#BE123C80";
             break;
           default:
             bg="dodgerblue"
             break;
         }
-        return <div key={el.id} className="max-w-[375px] min-w-[300px] min-h-[50px] flex items-center justify-center px-3 rounded-[500px] text-center text-white" style={{
+        return <div key={el.id} className="max-w-[375px] min-w-[300px] min-h-[50px] flex items-center justify-center px-3 rounded-[500px] text-center text-white backdrop-blur-3xl border-1 border-[#FFFFFF40]" style={{
           backgroundColor: bg 
         }}>
           {el.text?el.text:"Error....."}
@@ -214,10 +213,10 @@ return toastList.map(el=>{
 
 return (
     <>
-    <div className="fixed top-0 right-0 max-w-[400px] min-h-20 py-3 px-4 flex items-center justify-end gap-y-3 flex-col z-50">
+    <div className="fixed top-0 right-0 min-h-20 py-3 px-4 flex items-center justify-end gap-y-3 flex-col z-50 w-full pointer-events-none">
       {toasWriter()}
     </div>
-    <header className="flex items-center justify-center min-h-[80px] border-b-1 border-b-[#ddd] px-8">
+    <header className="flex items-center justify-center min-h-[80px] border-b-1 border-b-[#ddd] px-8 rounded-[0px_0px_40px_40px] sticky top-0 backdrop-blur-sm z-3">
       <div className="max-w-[1440px] w-full flex justify-between items-center">
         <a href="/" className="text-[]">ToDo App</a>
         <button className="px-3 py-1.5 rounded-[8px] cursor-pointer bg-blue-500 text-white hover:bg-blue-700 duration-300 transition-colors" onClick={addModalOpen}>
@@ -226,13 +225,13 @@ return (
       </div>
     </header>
     <main className="px-8 py-5">
-      <div className="flex flex-col gap-y-3 py-1 max-w-[1440px] mx-auto">
+      <div className="flex flex-col gap-y-5 py-1 max-w-[1440px] mx-auto">
         <TodoList/>
       </div>
     </main>
     {/* Modals */}
     {/* AddModal */}
-    <div className='fixed inset-0 justify-center items-center h-full w-full px-6' 
+    <div className='fixed inset-0 justify-center items-center h-full w-full px-6 z-10' 
     style={{display: addModalState==true?"flex":"none"}}>
       <div className='fixed inset-0 h-screen w-screen bg-[#ffffff31] z-10 backdrop-blur-sm' onClick={addModalClose}>
       </div>
@@ -256,7 +255,7 @@ return (
       </form>
     </div>
     {/* Edit modal */}
-    <div className='fixed inset-0 justify-center items-center h-full w-full px-6' 
+    <div className='fixed inset-0 justify-center items-center h-full w-full px-6 z-10' 
     style={{display: editModalState==true?"flex":"none"}}>
       <div className='fixed inset-0 h-screen w-screen bg-[#ffffff31] z-10 backdrop-blur-sm' onClick={editModalClose}>
       </div>
@@ -274,14 +273,14 @@ return (
         </select>
         <textarea name='description' className='border-1 outline-none px-2.5 py-2 rounded-[6px] w-full border-[#0005] focus:border-blue-500' placeholder='Please add description' data-required="true" defaultValue={editFillState.description} />
       </div>
-      <div className='border-t-1 w-full py-3 px-3 border-[#0005] flex justify-between px-4'>
+      <div className='border-t-1 w-full py-3 px-3 border-[#0005] flex justify-between px-4 z-10'>
         <button type='button' className='border-1 px-5 py-1.5 rounded-[8px] cursor-pointer transition-colors duration-300  hover:bg-[#fff] border-[#6f6f6f] text-[#6f6f6f]' onClick={editModalClose}>Cancel</button>
         <button type='submit' className='border-1 px-5 py-1.5 rounded-[8px] cursor-pointer transition-colors duration-300 bg-blue-500 border-blue-500 text-white hover:bg-blue-400'>Edit</button>
       </div>
       </form>
     </div>
     {/* Delete modal */}
-    <div className='fixed inset-0 justify-center items-center h-full w-full px-6' 
+    <div className='fixed inset-0 justify-center items-center h-full w-full px-6 z-10' 
     style={{display: deleteModalState==true?"flex":"none"}}>
       <div className='fixed inset-0 h-screen w-screen bg-[#ffffff31] z-10 backdrop-blur-sm' onClick={deleteModalClose}>
       </div>

@@ -204,7 +204,7 @@ return toastList.map(el=>{
             bg="dodgerblue"
             break;
         }
-        return <div key={el.id} className="max-w-[375px] min-w-[300px] min-h-[50px] flex items-center px-3 rounded-[12px] text-white" style={{
+        return <div key={el.id} className="max-w-[375px] min-w-[300px] min-h-[50px] flex items-center justify-center px-3 rounded-[500px] text-center text-white" style={{
           backgroundColor: bg 
         }}>
           {el.text?el.text:"Error....."}
@@ -234,23 +234,23 @@ return (
     {/* AddModal */}
     <div className='fixed inset-0 justify-center items-center h-full w-full px-6' 
     style={{display: addModalState==true?"flex":"none"}}>
-      <div className='fixed inset-0 h-screen w-screen bg-[#0005] z-10' onClick={addModalClose}>
+      <div className='fixed inset-0 h-screen w-screen bg-[#ffffff31] z-10 backdrop-blur-sm' onClick={addModalClose}>
       </div>
-      <form onSubmit={addSubmit} className='flex flex-col justify-between outline-none bg-[#f0f0f0] max-w-[460px] w-full border-1 z-20 rounded-[8px] border-[#0005]'>
+      <form onSubmit={addSubmit} className='flex flex-col justify-between outline-none max-w-[460px] w-full border-1 z-20 rounded-[8px] border-[#0005] bg-[#f0f0f061] backdrop-blur-2xl'>
       <div className='border-b-1 w-full py-3 px-3 border-[#0005]'>
-        <span><span className='text-blue-500 text-[14px]'>#</span>Add new ToDo</span>
+        <span>Add new ToDo</span>
       </div>
       <div className='flex justify-start items-center px-3 py-3 flex-col gap-y-3'>
-        <input type="text" name='title' className='border-1 outline-none px-2.5 py-2 rounded-[6px] w-full border-blue-500 focus:border-blue-500 placeholder-shown:border-[#0005]' placeholder='Please add title' data-required="true"/>
+        <input type="text" name='title' className='border-1 outline-none px-2.5 py-2 rounded-[6px] w-full border-[#0005] focus:border-blue-500' placeholder='Please add title' data-required="true"/>
         <select name="status" defaultValue="active" className='border-1 outline-none px-2.5 py-2 rounded-[6px] w-full border-[#0005] cursor-pointer focus:border-blue-500'>
           <option value="active">active</option>
           <option value="pending" >pending</option>
           <option value="completed" >completed</option>
         </select>
-        <textarea name='description' className='border-1 outline-none px-2.5 py-2 rounded-[6px] w-full border-blue-500 focus:border-blue-500 placeholder-shown:border-[#0005]' placeholder='Please add description' data-required="true" />
+        <textarea name='description' className='border-1 outline-none px-2.5 py-2 rounded-[6px] w-full border-[#0005] focus:border-blue-500' placeholder='Please add description' data-required="true" />
       </div>
       <div className='border-t-1 w-full py-3 px-3 border-[#0005] flex justify-between px-4'>
-        <button type='button' className='border-1 px-5 py-1.5 rounded-[8px] cursor-pointer transition-colors duration-300  hover:bg-gray-300' onClick={addModalClose}>Cancel</button>
+        <button type='button' className='border-1 px-5 py-1.5 rounded-[8px] cursor-pointer transition-colors duration-300  hover:bg-[#fff] border-[#6f6f6f] text-[#6f6f6f]' onClick={addModalClose}>Cancel</button>
         <button type='submit' className='border-1 px-5 py-1.5 rounded-[8px] cursor-pointer transition-colors duration-300 bg-blue-500 border-blue-500 text-white hover:bg-blue-400'>Add</button>
       </div>
       </form>
@@ -258,24 +258,24 @@ return (
     {/* Edit modal */}
     <div className='fixed inset-0 justify-center items-center h-full w-full px-6' 
     style={{display: editModalState==true?"flex":"none"}}>
-      <div className='fixed inset-0 h-screen w-screen bg-[#0005] z-10' onClick={editModalClose}>
+      <div className='fixed inset-0 h-screen w-screen bg-[#ffffff31] z-10 backdrop-blur-sm' onClick={editModalClose}>
       </div>
-      <form onSubmit={editSubmit} className='flex flex-col justify-between outline-none bg-[#f0f0f0] max-w-[460px] w-full border-1 z-20 rounded-[8px] border-[#0005]'>
+      <form onSubmit={editSubmit} className='flex flex-col justify-between outline-none max-w-[460px] w-full border-1 z-20 rounded-[8px] border-[#0005] bg-[#f0f0f061] backdrop-blur-2xl'>
       <div className='border-b-1 w-full py-3 px-3 border-[#0005]'>
-        <span><span className='text-blue-500 text-[14px]'>#</span>Edit ToDo</span>
+        <span>Edit ToDo</span>
       </div>
       <div className='flex justify-start items-center px-3 py-3 flex-col gap-y-3'>
-        <input type="text" name='title' className='border-1 outline-none px-2.5 py-2 rounded-[6px] w-full border-blue-500 focus:border-blue-500 placeholder-shown:border-[#0005]' placeholder='Please add title' data-required="true" defaultValue={editFillState.title} />
+        <input type="text" name='title' className='border-1 outline-none px-2.5 py-2 rounded-[6px] w-full border-[#0005] focus:border-blue-500' placeholder='Please add title' data-required="true" defaultValue={editFillState.title} />
         <select name="status" defaultValue={editFillState.status}  
-        className='border-1 outline-none px-2.5 py-2 rounded-[6px] w-full border-[#0005] cursor-pointer focus:border-blue-500'>
+        className='border-1 outline-none px-2.5 py-2 rounded-[6px] w-full border-[#0005] focus:border-blue-500 cursor-pointer'>
           <option value="active">active</option>
           <option value="pending" >pending</option>
           <option value="completed" >completed</option>
         </select>
-        <textarea name='description' className='border-1 outline-none px-2.5 py-2 rounded-[6px] w-full border-blue-500 focus:border-blue-500 placeholder-shown:border-[#0005]' placeholder='Please add description' data-required="true" defaultValue={editFillState.description} />
+        <textarea name='description' className='border-1 outline-none px-2.5 py-2 rounded-[6px] w-full border-[#0005] focus:border-blue-500' placeholder='Please add description' data-required="true" defaultValue={editFillState.description} />
       </div>
       <div className='border-t-1 w-full py-3 px-3 border-[#0005] flex justify-between px-4'>
-        <button type='button' className='border-1 px-5 py-1.5 rounded-[8px] cursor-pointer transition-colors duration-300  hover:bg-gray-300' onClick={editModalClose}>Cancel</button>
+        <button type='button' className='border-1 px-5 py-1.5 rounded-[8px] cursor-pointer transition-colors duration-300  hover:bg-[#fff] border-[#6f6f6f] text-[#6f6f6f]' onClick={editModalClose}>Cancel</button>
         <button type='submit' className='border-1 px-5 py-1.5 rounded-[8px] cursor-pointer transition-colors duration-300 bg-blue-500 border-blue-500 text-white hover:bg-blue-400'>Edit</button>
       </div>
       </form>
@@ -283,18 +283,18 @@ return (
     {/* Delete modal */}
     <div className='fixed inset-0 justify-center items-center h-full w-full px-6' 
     style={{display: deleteModalState==true?"flex":"none"}}>
-      <div className='fixed inset-0 h-screen w-screen bg-[#0005] z-10' onClick={deleteModalClose}>
+      <div className='fixed inset-0 h-screen w-screen bg-[#ffffff31] z-10 backdrop-blur-sm' onClick={deleteModalClose}>
       </div>
-      <div className='flex flex-col justify-between outline-none bg-[#f0f0f0] max-w-[460px] w-full border-1 z-20 rounded-[8px] border-[#0005]'>
+      <div className='flex flex-col justify-between outline-none  max-w-[460px] w-full border-1 z-20 rounded-[8px] border-[#0005] bg-[#f0f0f061] backdrop-blur-2xl'>
       <div className='border-b-1 w-full py-3 px-3 border-[#0005]'>
-        <span><span className='text-blue-500 text-[14px]'>#</span>Delete ToDo</span>
+        <span>Delete ToDo</span>
       </div>
       <div className='flex justify-start items-center px-3 py-3 flex-col gap-y-3'>
        <span className="w-full">You realy delete this ToDo</span>
       </div>
       <div className='border-t-1 w-full py-3 px-3 border-[#0005] flex justify-between px-4'>
-        <button type='button' className='border-1 px-5 py-1.5 rounded-[8px] cursor-pointer transition-colors duration-300  hover:bg-gray-300' onClick={deleteModalClose}>Cancel</button>
-        <button type='submit' className='border-1 px-5 py-1.5 rounded-[8px] cursor-pointer transition-colors duration-300 bg-red-500 border-red-500 text-white hover:bg-red-400' onClick={deleteToDoSure}>Delete</button>
+        <button type='button' className='border-1 px-5 py-1.5 rounded-[8px] cursor-pointer transition-colors duration-300  hover:bg-[#fff] border-[#6f6f6f] text-[#6f6f6f]' onClick={deleteModalClose}>Cancel</button>
+        <button type='submit' className='border-1 px-5 py-1.5 rounded-[8px] cursor-pointer transition-colors duration-300 bg-[#ff5258] border-[#ff5258] text-white hover:bg-red-500' onClick={deleteToDoSure}>Delete</button>
       </div>
       </div>
     </div>

@@ -233,7 +233,7 @@ return (
     {/* AddModal */}
     <div className='fixed inset-0 justify-center items-center h-full w-full px-6 z-10' 
     style={{display: addModalState==true?"flex":"none"}}>
-      <div className='fixed inset-0 h-screen w-screen bg-[#ffffff31] z-10 backdrop-blur-sm' onClick={addModalClose}>
+      <div className='fixed inset-0 h-screen w-screen bg-[#ffffff31] z-10 backdrop-blur-xl' onClick={addModalClose}>
       </div>
       <form onSubmit={addSubmit} className='flex flex-col justify-between outline-none max-w-[460px] w-full border-1 z-20 rounded-[8px] border-[#0005] bg-[#f0f0f061] backdrop-blur-2xl'>
       <div className='border-b-1 w-full py-3 px-3 border-[#0005]'>
@@ -257,7 +257,7 @@ return (
     {/* Edit modal */}
     <div className='fixed inset-0 justify-center items-center h-full w-full px-6 z-10' 
     style={{display: editModalState==true?"flex":"none"}}>
-      <div className='fixed inset-0 h-screen w-screen bg-[#ffffff31] z-10 backdrop-blur-sm' onClick={editModalClose}>
+      <div className='fixed inset-0 h-screen w-screen bg-[#ffffff31] z-10 backdrop-blur-xl' onClick={editModalClose}>
       </div>
       <form onSubmit={editSubmit} className='flex flex-col justify-between outline-none max-w-[460px] w-full border-1 z-20 rounded-[8px] border-[#0005] bg-[#f0f0f061] backdrop-blur-2xl'>
       <div className='border-b-1 w-full py-3 px-3 border-[#0005]'>
@@ -282,7 +282,7 @@ return (
     {/* Delete modal */}
     <div className='fixed inset-0 justify-center items-center h-full w-full px-6 z-10' 
     style={{display: deleteModalState==true?"flex":"none"}}>
-      <div className='fixed inset-0 h-screen w-screen bg-[#ffffff31] z-10 backdrop-blur-sm' onClick={deleteModalClose}>
+      <div className='fixed inset-0 h-screen w-screen bg-[#ffffff31] z-10 backdrop-blur-xl' onClick={deleteModalClose}>
       </div>
       <div className='flex flex-col justify-between outline-none  max-w-[460px] w-full border-1 z-20 rounded-[8px] border-[#0005] bg-[#f0f0f061] backdrop-blur-2xl'>
       <div className='border-b-1 w-full py-3 px-3 border-[#0005]'>
